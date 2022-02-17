@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_management/login.dart';
+import 'package:hospital_management/signup.dart';
 import 'package:hospital_management/utils/routes.dart';
 
 import 'home.dart';
@@ -19,6 +20,7 @@ routes: {
   "/" :(context) => LoginPage(),
   MyRoutes.homeRoute:(context) => HomePage(),
   MyRoutes.loginRoute:(context) => LoginPage(),
+  MyRoutes.signupRoute:(context) => SignUp(),
 },
 
     );

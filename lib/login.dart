@@ -8,6 +8,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isHiddenPassword = true;
     return Material(
         child: Column(
       children: [
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
           height: 20.0,
         ),
         Text(
-          "Welcome",
+          "Hospital Management",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         SizedBox(
@@ -38,9 +39,11 @@ class LoginPage extends StatelessWidget {
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: "Enter password",
-                  labelText: "Password",
-                ),
+                    hintText: "Enter password",
+                    labelText: "Password",
+                    suffixIcon: Icon(
+                      Icons.visibility,
+                    )),
               ),
               SizedBox(
                 height: 20.0,
@@ -52,6 +55,13 @@ class LoginPage extends StatelessWidget {
                 child: Text("Login"),
                 style: TextButton.styleFrom(),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.signupRoute);
+                },
+                child: Text("signup"),
+                style: TextButton.styleFrom(),
+              )
             ],
           ),
         )
