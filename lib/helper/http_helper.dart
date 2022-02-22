@@ -10,10 +10,10 @@ class HttpHelper {
     var responseJson;
     try {
       //ToDo: add token
- ;
+      ;
       var headers = {
         "Content-Type": "application/json",
-        "Authorization": "guyyiuyuhuihuyfty5hhjhjhjguuhh",
+        // "Authorization": "guyyiuyuhuihuyfty5hhjhjhjguuhh",
       };
       var uri = Uri.parse(url);
       final response = await get(uri, headers: headers);
@@ -56,10 +56,9 @@ class HttpHelper {
         Map<dynamic, dynamic> responseJson = json.decode(response.body);
         var data = responseJson['message'];
         log("error: " + data.toString());
-        throw FetchDataException(
-            'Username or Password does not match');
+        throw FetchDataException('Username or Password does not match');
       case 401:
-      //TokenHandler.refreshToken();
+        //TokenHandler.refreshToken();
         Map<dynamic, dynamic> responseJson = json.decode(response.body);
         dynamic data = responseJson['message'];
         throw UnauthorisedException(data.join('\n'));

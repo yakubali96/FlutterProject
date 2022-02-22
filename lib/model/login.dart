@@ -1,4 +1,4 @@
-class Login{
+class Login {
   late String username;
   late String password;
 

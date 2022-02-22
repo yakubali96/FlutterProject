@@ -6,19 +6,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         title: Text("Hospital Management"),
       ),
-        body: Center(
-            child: Container(
-      child: Text("Welcome to Root page Root"),
-    ),
+      body: Center(
+        child: Container(
+          child: Text("Welcome to Root page Root"),
         ),
+      ),
       drawer: Drawer(
-
-        backgroundColor:Colors.blue ,
-
-
+        backgroundColor: Colors.blue,
       ),
     );
   }

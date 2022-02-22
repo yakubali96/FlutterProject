@@ -4,10 +4,10 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hospital_management/helper/http_helper.dart';
+import 'package:hospital_management/model/login.dart';
 import 'package:hospital_management/utils/routes.dart';
 
-import 'helper/http_helper.dart';
-import 'model/login.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,7 +17,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final _http = HttpHelper();
 
   final _usernameController = TextEditingController();
@@ -42,9 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.blue,
                         fontWeight: FontWeight.w900,
                         fontSize: 40),
-                  )
-              ),
-
+                  )),
               Container(
                 padding: const EdgeInsets.all(30),
                 child: TextField(
@@ -52,8 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Username',
-                      hintText: "Type your username"
-                  ),
+                      hintText: "Type your username"),
                 ),
               ),
               Container(
@@ -64,16 +60,19 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
-                      hintText: "Type your password"
-                  ),
+                      hintText: "Type your password"),
                 ),
               ),
-              const SizedBox(height: 50.0,),
+              const SizedBox(
+                height: 50.0,
+              ),
               TextButton(
                 onPressed: () {
 //forgot password screen
                 },
-                child: const Text('Forgot Password?',),
+                child: const Text(
+                  'Forgot Password?',
+                ),
               ),
               Container(
                   height: 50,
@@ -82,17 +81,14 @@ class _LoginPageState extends State<LoginPage> {
                     child: const Text(
                       'Login',
                       style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w900
-                      ),
+                          fontSize: 20.0, fontWeight: FontWeight.w900),
                     ),
                     onPressed: () {
                       print(_usernameController.text);
                       print(_passwordController.text);
                       loginUser();
                     },
-                  )
-              ),
+                  )),
               Row(
                 children: <Widget>[
                   const Text('Does not have account?'),
@@ -109,8 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 
@@ -124,13 +119,12 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       final response =
-      await _http.postData('http:// 192.168.1.21/hms/auth/signin', _body);
+          await _http.postData('http:// 192.168.1.21/hms/auth/signin', _body);
       print(response.toString());
 
       Navigator.pushNamed(context, MyRoutes.homeRoute);
 
       // Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MyRoutes.homeRoute));
-
 
     } catch (e) {
       log(e.toString());
