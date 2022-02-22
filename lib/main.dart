@@ -9,20 +9,23 @@ void main() {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-routes: {
 
-  "/" :(context) => LoginPage(),
-  MyRoutes.homeRoute:(context) => HomePage(),
-  MyRoutes.loginRoute:(context) => LoginPage(),
-  MyRoutes.signupRoute:(context) => SignUp(),
-},
 
+      routes: {
+        "/": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.signupRoute: (context) => SignUp(),
+      },
     );
   }
 }
+
+
+
+
