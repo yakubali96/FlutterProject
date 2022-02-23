@@ -5,8 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hospital_management/helper/http_helper.dart';
-import 'package:hospital_management/model/login.dart';
+import 'package:hospital_management/helper/patientget.dart';
+import 'package:hospital_management/model/user_payload.dart';
 import 'package:hospital_management/utils/routes.dart';
+
+import 'home.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -21,6 +24,41 @@ class _LoginPageState extends State<LoginPage> {
 
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  login() async {
+    String username = _usernameController.value.text;
+    String password = _passwordController.value.text;
+    var user = Login(username: username, password: password);
+    print(user);
+
+    signIn(user).then((res) {
+      Map<String, dynamic> map = jsonDecode(res.body);
+
+      print(res.body);
+      if (map['accessToken'] != null) {
+        Fluttertoast.showToast(
+            msg: "Login Sucsess",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 3,
+            backgroundColor: Colors.green,
+            textColor: Colors.white,
+            fontSize: 16.0);
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => HomePage()));
+      } else {
+        Fluttertoast.showToast(
+            msg: "Login Failed",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 3,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       print(_usernameController.text);
                       print(_passwordController.text);
-                      loginUser();
+                      login();
                     },
                   )),
               Row(
@@ -109,33 +147,34 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Future<void> loginUser() async {
-    String username = _usernameController.value.text;
-    String password = _passwordController.value.text;
-
-    var model = Login(username: username, password: password);
-
-    String _body = jsonEncode(model.toMap());
-
-    try {
-      final response =
-          await _http.postData('http:// 192.168.1.21/hms/auth/signin', _body);
-      print(response.toString());
-
-      Navigator.pushNamed(context, MyRoutes.homeRoute);
-
-      // Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MyRoutes.homeRoute));
-
-    } catch (e) {
-      log(e.toString());
-      Fluttertoast.showToast(
-          msg: "$e",
-          toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 16.0);
-    }
-  }
+//   Future<void> loginUser() async {
+//     String username = _usernameController.value.text;
+//     String password = _passwordController.value.text;
+//
+//     var model = Login(username: username, password: password);
+//
+//     String _body = jsonEncode(model.toMap());
+//
+//     try {
+//       final response =
+//           await _http.postData(getUser, _body);
+//           print(response.toString());
+//
+//       Navigator.pushNamed(context, MyRoutes.homeRoute);
+//
+//       // Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MyRoutes.homeRoute));
+//
+//     } catch (e) {
+//       log(e.toString());
+//       Fluttertoast.showToast(
+//           msg: "$e",
+//           toastLength: Toast.LENGTH_LONG,
+//           gravity: ToastGravity.CENTER,
+//           timeInSecForIosWeb: 1,
+//           backgroundColor: Colors.red,
+//           textColor: Colors.white,
+//           fontSize: 16.0);
+//     }
+//   }
+// }
 }
