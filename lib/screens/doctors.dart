@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class EventsPage extends StatefulWidget {
+class DoctorsPage extends StatefulWidget {
   @override
   _EventsPageState createState() => _EventsPageState();
 }
 
-class _EventsPageState extends State<EventsPage> {
+class _EventsPageState extends State<DoctorsPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Events Page"),
+        child: Text("Doctors Page"),
       ),
     );
   }

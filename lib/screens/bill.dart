@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SendFeedbackPage extends StatefulWidget {
+class Bill extends StatefulWidget {
   @override
   _SendFeedbackPageState createState() => _SendFeedbackPageState();
 }
 
-class _SendFeedbackPageState extends State<SendFeedbackPage> {
+class _SendFeedbackPageState extends State<Bill> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Send Feedback Page"),
+        child: Text("Bill Page"),
       ),
     );
   }
