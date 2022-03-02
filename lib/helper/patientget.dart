@@ -16,6 +16,33 @@ Future<http.Response> getPatients() async {
 
   return response;
 
+//get doctors
+}
+
+Future<http.Response> getDoctors() async {
+  final response = await http.get(Uri.parse(getAllDoctorApi),
+      headers: requestHeaders);
+
+
+  return response;
+}
+  Future<http.Response> getWards() async {
+    final response = await http.get(Uri.parse(getAllWardApi),
+        headers: requestHeaders );
+
+
+    return response;
+
+
+}
+
+Future<http.Response> getTest() async {
+  final response = await http.get(Uri.parse(getAllTestApi),
+      headers: requestHeaders );
+
+
+  return response;
+
 
 }
 //

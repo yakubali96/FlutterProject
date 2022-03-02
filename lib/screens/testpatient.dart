@@ -5,23 +5,24 @@ import 'package:hospital_management/helper/patientget.dart';
 import 'package:hospital_management/model/doctor.dart';
 
 import 'package:hospital_management/model/PatientDt.dart';
+import 'package:hospital_management/model/test.dart';
 
-class DoctorsPage extends StatefulWidget {
-  const DoctorsPage({Key? key}) : super(key: key);
+class TestPage extends StatefulWidget {
+  const TestPage({Key? key}) : super(key: key);
 
   @override
-  _DoctorsPageState createState() => _DoctorsPageState();
+  _TestPageState createState() => _TestPageState();
 }
 
-class _DoctorsPageState extends State<DoctorsPage> {
-  List<Doctor> dlist = [];
+class _TestPageState extends State<TestPage> {
+  List<Test> tlist = [];
 
   @override
   void initState() {
-    getDoctors().then((res) {
+    getTest().then((res) {
       var list = jsonDecode(res.body) as List<dynamic>;
-      dlist = list.map((e) => Doctor.fromMap(e)).toList();
-      print(dlist);
+      tlist = list.map((e) => Test.fromMap(e)).toList();
+      print(tlist);
 
       setState(() {});
     });
@@ -33,16 +34,16 @@ class _DoctorsPageState extends State<DoctorsPage> {
     return Container(
       child: DataTable(columns: const [
         DataColumn(
-          label: Text('Doctor ID'),
+          label: Text('Test ID'),
         ),
         DataColumn(
-          label: Text('Doctor Name'),
+          label: Text('Test Name'),
         ),
         DataColumn(
-          label: Text('Doctor Address'),
+          label: Text('Test Date'),
         ),
         DataColumn(
-          label: Text('Phone No'),
+          label: Text('Doctor'),
         ),
         // DataColumn(
         //   label: Text('date Of Barth'),
@@ -54,14 +55,14 @@ class _DoctorsPageState extends State<DoctorsPage> {
         //   label: Text('Doctor'),
         // ),
       ], rows: [
-        for (int i = 0; i < dlist.length; i++)
+        for (int i = 0; i < tlist.length; i++)
           DataRow(cells: [
-            DataCell(Text(dlist[i].doctorId.toString())),
-            DataCell(Text(dlist[i].doctorName)),
-            DataCell(Text(dlist[i].doctorAddress)),
+            DataCell(Text(tlist[i].tid.toString())),
+            DataCell(Text(tlist[i].tName)),
+            DataCell(Text(tlist[i].tDate)),
             // DataCell(Text(plist[i].doc)),
             // DataCell(Text(plist[i].pAdd)),
-            DataCell(Text(dlist[i].doctorPhoneNO.toString())),
+            DataCell(Text(tlist[i].doctor.doctorName)),
             // DataCell(Text(plist[i].tid)),
           ])
       ]),

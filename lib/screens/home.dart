@@ -7,7 +7,7 @@ import 'package:hospital_management/screens/patients.dart';
 import 'package:hospital_management/screens/dashboard.dart';
 import 'package:hospital_management/screens/doctors.dart';
 import 'package:hospital_management/screens/my_drawer_header.dart';
-import 'package:hospital_management/screens/test.dart';
+import 'package:hospital_management/screens/testpatient.dart';
 import 'package:hospital_management/screens/words.dart';
 import 'package:hospital_management/screens/speacialization.dart';
 import 'package:hospital_management/screens/insurance.dart';
