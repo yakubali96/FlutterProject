@@ -30,41 +30,50 @@ class _DoctorsPageState extends State<DoctorsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: DataTable(columns: const [
-        DataColumn(
-          label: Text('Doctor ID'),
-        ),
-        DataColumn(
-          label: Text('Doctor Name'),
-        ),
-        DataColumn(
-          label: Text('Doctor Address'),
-        ),
-        DataColumn(
-          label: Text('Phone No'),
-        ),
-        // DataColumn(
-        //   label: Text('date Of Barth'),
-        // ),
-        // DataColumn(
-        //   label: Text('Doctor'),
-        // ),
-        // DataColumn(
-        //   label: Text('Doctor'),
-        // ),
-      ], rows: [
-        for (int i = 0; i < dlist.length; i++)
-          DataRow(cells: [
-            DataCell(Text(dlist[i].doctorId.toString())),
-            DataCell(Text(dlist[i].doctorName)),
-            DataCell(Text(dlist[i].doctorAddress)),
-            // DataCell(Text(plist[i].doc)),
-            // DataCell(Text(plist[i].pAdd)),
-            DataCell(Text(dlist[i].doctorPhoneNO.toString())),
-            // DataCell(Text(plist[i].tid)),
-          ])
-      ]),
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+
+        child: DataTable(columns: const [
+          DataColumn(
+            label: Text('Doctor ID'),
+          ),
+          DataColumn(
+            label: Text('Doctor Name'),
+          ),
+          DataColumn(
+            label: Text('Doctor Address'),
+          ),
+          DataColumn(
+            label: Text('Phone No'),
+          ),
+          DataColumn(
+            label: Text('Department Name'),
+          ),
+          DataColumn(
+            label: Text('Specialization'),
+          ),
+          // DataColumn(
+          //   label: Text('Doctor'),
+          // ),
+        ], rows: [
+          for (int i = 0; i < dlist.length; i++)
+            DataRow(cells: [
+              DataCell(Text(dlist[i].doctorId.toString())),
+              DataCell(Text(dlist[i].doctorName)),
+              DataCell(Text(dlist[i].doctorAddress)),
+              // DataCell(Text(plist[i].doc)),
+              // DataCell(Text(plist[i].pAdd)),
+              DataCell(Text(dlist[i].doctorPhoneNO.toString())),
+              DataCell(
+                Text(dlist[i].department.deptName),
+              ),DataCell(
+                Text(dlist[i].specialization.speciality),
+              ),
+            ]),
+        ]),
+      ),
     );
   }
 }

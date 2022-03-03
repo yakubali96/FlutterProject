@@ -2,9 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hospital_management/helper/patientget.dart';
-import 'package:hospital_management/model/doctor.dart';
 
-import 'package:hospital_management/model/PatientDt.dart';
 import 'package:hospital_management/model/test.dart';
 
 class TestPage extends StatefulWidget {
@@ -60,8 +58,8 @@ class _TestPageState extends State<TestPage> {
             DataCell(Text(tlist[i].tid.toString())),
             DataCell(Text(tlist[i].tName)),
             DataCell(Text(tlist[i].tDate)),
-            // DataCell(Text(plist[i].doc)),
-            // DataCell(Text(plist[i].pAdd)),
+          // DataCell(Text(plist[i].doc)),
+          // DataCell(Text(plist[i].pAdd)),
             DataCell(Text(tlist[i].doctor.doctorName)),
             // DataCell(Text(plist[i].tid)),
           ])

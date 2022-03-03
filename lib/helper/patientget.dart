@@ -38,11 +38,17 @@ Future<http.Response> getDoctors() async {
 
 Future<http.Response> getTest() async {
   final response = await http.get(Uri.parse(getAllTestApi),
-      headers: requestHeaders );
+      headers: requestHeaders);
 
 
   return response;
+}
+  Future<http.Response> getSpeacialization() async {
+    final response = await http.get(Uri.parse(getAllSpeacializationApi),
+        headers: requestHeaders );
 
+
+    return response;
 
 }
 //

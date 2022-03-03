@@ -5,7 +5,6 @@ import 'package:hospital_management/helper/contstants.dart';
 import 'package:hospital_management/helper/patientget.dart';
 import 'package:hospital_management/model/WardDTO.dart';
 
-
 class WordsPage extends StatefulWidget {
   const WordsPage({Key? key}) : super(key: key);
 
@@ -21,12 +20,10 @@ class _WordsPageState extends State<WordsPage> {
     getWards().then((res) {
       var list = jsonDecode(res.body) as List<dynamic>;
 
-      wlist=list.map((e) => WardDTO.fromMap(e)).toList();
+      wlist = list.map((e) => WardDTO.fromMap(e)).toList();
       print(wlist);
 
-      setState(() {
-
-      });
+      setState(() {});
     });
     super.initState();
   }
@@ -41,13 +38,21 @@ class _WordsPageState extends State<WordsPage> {
         DataColumn(
           label: Text('Name'),
         ),
-
+        DataColumn(
+          label: Text('Action'),
+        ),
       ], rows: [
         for (int i = 0; i < wlist.length; i++)
           DataRow(cells: [
             DataCell(Text(wlist[i].wid.toString())),
             DataCell(Text(wlist[i].wardName)),
-            // DataCell(Text(plist[i].pMobileNo.toString())),
+            DataCell(
+              Icon(
+                Icons.edit,
+                color: Colors.green,
+                size: 30.0,
+              ),
+            ),
             // // DataCell(Text(plist[i].doc)),
             // DataCell(Text(plist[i].pAdd)),
             // DataCell(Text(plist[i].pDob)),

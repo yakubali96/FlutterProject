@@ -1,8 +1,6 @@
 class Specialization {
-
-  int specId;
-
-   String speciality;
+  late int specId;
+  late String speciality;
 
 //<editor-fold desc="Data Methods">
 
