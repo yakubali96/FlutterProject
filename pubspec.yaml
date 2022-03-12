@@ -67,6 +67,13 @@ flutter:
       - assets/images/signup.png
       - assets/images/profile.jpg
       - assets/images/yakub.jpg
+      - assets/images/tooth.png
+      - assets/images/bone.png
+      - assets/images/brain.png
+      - assets/images/heart.png
+      - assets/images/dr_1.png
+      - assets/images/dr_2.png
+      - assets/images/dr_3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

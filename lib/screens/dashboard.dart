@@ -55,7 +55,7 @@ class HomePageState extends State<DashboardPage> {
             Container(
               margin: EdgeInsets.only(top: 20, left: 20),
               child: Text(
-                "Hi, Olivia",
+                "Admin",
                 style: TextStyle(
                   color: Color(0xff363636),
                   fontSize: 25,

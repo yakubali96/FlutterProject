@@ -58,7 +58,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
                     Container(
                       margin: EdgeInsets.only(bottom: 20),
                       child: Image.asset(
-                        "assets/dr_details.png",
+                        "assets/images/yakub.jpg",
                       ),
                     ),
                     Container(
