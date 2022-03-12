@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_management/helper/patientget.dart';
 import 'package:hospital_management/model/PatientDt.dart';
@@ -13,6 +12,7 @@ class PatientsPage extends StatefulWidget {
 }
 
 class _PatientsPageState extends State<PatientsPage> {
+
   List<PatientDt> plist = [];
 
   @override
@@ -29,8 +29,13 @@ class _PatientsPageState extends State<PatientsPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      child: DataTable(columns: const [
+
+      child: DataTable(
+
+
+          columns: const [
         DataColumn(
           label: Text('ID'),
         ),

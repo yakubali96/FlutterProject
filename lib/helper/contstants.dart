@@ -1,5 +1,5 @@
 
-String host = "http://192.168.1.21:8080";
+String host = "http://localhost:8080";
 String getAllPatientApi = host + "/hms/api/patient";
 String getAllDoctorApi = host + "/hms/api/doctor";
 String getAllWardApi = host + "/hms/api/ward";

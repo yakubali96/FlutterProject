@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hospital_management/screens/dashboard.dart';
 import 'package:hospital_management/screens/employees.dart';
 import 'package:hospital_management/screens/medicos.dart';
 import 'package:hospital_management/screens/operation.dart';
@@ -51,9 +52,33 @@ class _HomePageState extends State<HomePage> {
       container = EmployeesPage();
     }
     return Scaffold(
+
       appBar: AppBar(
-        backgroundColor: Colors.blue[700],
+
+        elevation: 0.0,
+          backgroundColor: Colors.teal,
+        centerTitle: true,
         title: Text("Hospital Management"),
+        actions: [
+          GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 10),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 10),
+              padding: const EdgeInsets.all(8.0),
+
+              child: Image.asset("images/yakub.jpg")
+              
+            )
+          )
+        ],
       ),
       body: container,
       drawer: Drawer(
