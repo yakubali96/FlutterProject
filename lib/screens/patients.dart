@@ -30,35 +30,72 @@ class _PatientsPageState extends State<PatientsPage> {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return SingleChildScrollView(
 
-      child: DataTable(
+        scrollDirection: Axis.vertical,
+        child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
 
-
-          columns: const [
+        child: DataTable(columns: const [
         DataColumn(
-          label: Text('ID'),
+            label: Text('ID',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                   ))
+
         ),
         DataColumn(
-          label: Text('Name'),
+            label: Text('Name',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
         DataColumn(
-          label: Text('Contact Number'),
+            label: Text('Contact Number',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
         // DataColumn(
         //   label: Text('Address'),
         // ),
         DataColumn(
-          label: Text('date Of Barth'),
+            label: Text('Date of birth',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
         DataColumn(
-          label: Text('Doctor'),
+            label: Text('Doctor',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
         DataColumn(
-          label: Text('Test'),
+            label: Text('Test',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
         DataColumn(
-          label: Text('action'),
+            label: Text('Action',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))
         ),
       ], rows: [
         for (int i = 0; i < plist.length; i++)
