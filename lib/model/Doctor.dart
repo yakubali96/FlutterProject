@@ -73,12 +73,12 @@ class Doctor {
 
   Map<String, dynamic> toMap() {
     return {
-      'doctorId': this.doctorId,
-      'doctorName': this.doctorName,
-      'doctorAddress': this.doctorAddress,
-      'doctorPhoneNO': this.doctorPhoneNO,
-      'department': this.department,
-      'specialization': this.specialization,
+      'doctorId': doctorId,
+      'doctorName': doctorName,
+      'doctorAddress': doctorAddress,
+      'doctorPhoneNO': doctorPhoneNO,
+      'department': department,
+      'specialization': specialization,
     };
   }
 
@@ -89,7 +89,7 @@ class Doctor {
       doctorAddress: map['doctorAddress'] as String,
       doctorPhoneNO: map['doctorPhoneNO'] as int,
       department: Department.fromMap(map['department']),
-      specialization: Specialization.fromMap(map['sepcialization']),
+      specialization: Specialization.fromMap(map['specialization']),
     );
   }
 

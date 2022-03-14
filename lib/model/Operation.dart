@@ -1,17 +1,19 @@
-import 'PatientDt.dart';
+import 'package:hospital_management/model/PatientDt.dart';
+
 import 'Doctor.dart';
 
-class WardDTO{
-  late int wid;
-  late String wardName;
+class Operation{
+
+  late int oid;
+  late String oName;
   late PatientDt patient;
   late Doctor doctor;
 
 //<editor-fold desc="Data Methods">
 
-  WardDTO({
-    required this.wid,
-    required this.wardName,
+  Operation({
+    required this.oid,
+    required this.oName,
     required this.patient,
     required this.doctor,
   });
@@ -19,36 +21,36 @@ class WardDTO{
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is WardDTO &&
+      (other is Operation &&
           runtimeType == other.runtimeType &&
-          wid == other.wid &&
-          wardName == other.wardName &&
+          oid == other.oid &&
+          oName == other.oName &&
           patient == other.patient &&
           doctor == other.doctor);
 
   @override
   int get hashCode =>
-      wid.hashCode ^ wardName.hashCode ^ patient.hashCode ^ doctor.hashCode;
+      oid.hashCode ^ oName.hashCode ^ patient.hashCode ^ doctor.hashCode;
 
   @override
   String toString() {
-    return 'WardDTO{' +
-        ' wid: $wid,' +
-        ' wardName: $wardName,' +
+    return 'Operation{' +
+        ' oid: $oid,' +
+        ' oName: $oName,' +
         ' patient: $patient,' +
         ' doctor: $doctor,' +
         '}';
   }
 
-  WardDTO copyWith({
-    int? wid,
-    String? wardName,
+  Operation copyWith({
+    int? oid,
+    String? oName,
     PatientDt? patient,
     Doctor? doctor,
   }) {
-    return WardDTO(
-      wid: wid ?? this.wid,
-      wardName: wardName ?? this.wardName,
+    return Operation(
+      oid: oid ?? this.oid,
+      oName: oName ?? this.oName,
       patient: patient ?? this.patient,
       doctor: doctor ?? this.doctor,
     );
@@ -56,17 +58,17 @@ class WardDTO{
 
   Map<String, dynamic> toMap() {
     return {
-      'wid': this.wid,
-      'wardName': this.wardName,
+      'oid': this.oid,
+      'oName': this.oName,
       'patient': this.patient,
       'doctor': this.doctor,
     };
   }
 
-  factory WardDTO.fromMap(Map<String, dynamic> map) {
-    return WardDTO(
-      wid: map['wid'] as int,
-      wardName: map['wardName'] as String,
+  factory Operation.fromMap(Map<String, dynamic> map) {
+    return Operation(
+      oid: map['oid'] as int,
+      oName: map['oName'] as String,
       patient: map['patient'] as PatientDt,
       doctor: map['doctor'] as Doctor,
     );

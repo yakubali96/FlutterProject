@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import 'doctor.dart';
+import 'Doctor.dart';
 
 class Test {
    late int tid;

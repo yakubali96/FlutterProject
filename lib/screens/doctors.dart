@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hospital_management/helper/patientget.dart';
-import 'package:hospital_management/model/doctor.dart';
+import 'package:hospital_management/model/Doctor.dart';
 
 import 'package:hospital_management/model/PatientDt.dart';
 
