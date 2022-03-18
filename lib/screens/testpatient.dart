@@ -40,9 +40,9 @@ class _TestPageState extends State<TestPage> {
         DataColumn(
           label: Text('Test Date'),
         ),
-        DataColumn(
-          label: Text('Doctor'),
-        ),
+        // DataColumn(
+        //   label: Text('Doctor'),
+        // ),
         // DataColumn(
         //   label: Text('date Of Barth'),
         // ),
@@ -60,7 +60,7 @@ class _TestPageState extends State<TestPage> {
             DataCell(Text(tlist[i].tDate)),
           // DataCell(Text(plist[i].doc)),
           // DataCell(Text(plist[i].pAdd)),
-            DataCell(Text(tlist[i].doctor.doctorName)),
+          //   DataCell(Text(tlist[i].doctor.doctorName)),
             // DataCell(Text(plist[i].tid)),
           ])
       ]),

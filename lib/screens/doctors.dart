@@ -35,44 +35,98 @@ class _DoctorsPageState extends State<DoctorsPage> {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
 
-        child: DataTable(columns: const [
-          DataColumn(
-            label: Text('Doctor ID'),
-          ),
-          DataColumn(
-            label: Text('Doctor Name'),
-          ),
-          DataColumn(
-            label: Text('Doctor Address'),
-          ),
-          DataColumn(
-            label: Text('Phone No'),
-          ),
-          DataColumn(
-            label: Text('Department Name'),
-          ),
-          DataColumn(
-            label: Text('Specialization'),
-          ),
-          // DataColumn(
-          //   label: Text('Doctor'),
-          // ),
-        ], rows: [
-          for (int i = 0; i < dlist.length; i++)
-            DataRow(cells: [
-              DataCell(Text(dlist[i].doctorId.toString())),
-              DataCell(Text(dlist[i].doctorName)),
-              DataCell(Text(dlist[i].doctorAddress)),
-              // DataCell(Text(plist[i].doc)),
-              // DataCell(Text(plist[i].pAdd)),
-              DataCell(Text(dlist[i].doctorPhoneNO.toString())),
-              DataCell(
-                Text(dlist[i].department.deptName),
-              ),DataCell(
-                Text(dlist[i].specialization.speciality),
+
+        child: Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.all(20),
+              child: Text(
+                "Doctors List",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
+                ),
               ),
+            ),
+            DataTable(columns: const [
+
+              DataColumn(
+                  label: Text('Doctor id',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Doctor Name',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Doctors Address',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Phone no',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Department Name',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Speacialization',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              DataColumn(
+                  label: Text('Action',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+              // DataColumn(
+              //   label: Text('Doctor'),
+              // ),
+            ], rows: [
+              for (int i = 0; i < dlist.length; i++)
+                DataRow(cells: [
+                  DataCell(Text(dlist[i].doctorId.toString())),
+                  DataCell(Text(dlist[i].doctorName)),
+                  DataCell(Text(dlist[i].doctorAddress)),
+                  // DataCell(Text(plist[i].doc)),
+                  // DataCell(Text(plist[i].pAdd)),
+                  DataCell(Text(dlist[i].doctorPhoneNO.toString())),
+                  DataCell(
+                    Text(dlist[i].department.deptName),
+                  ),DataCell(
+                    Text(dlist[i].specialization.speciality),
+                  ),
+                  const DataCell(
+                    Icon(
+                      Icons.edit,
+                      color: Colors.green,
+                      size: 30.0,
+                    ),
+                  ),
+                ]),
             ]),
-        ]),
+          ],
+        ),
       ),
     );
   }

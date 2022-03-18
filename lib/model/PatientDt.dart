@@ -10,7 +10,6 @@ class PatientDt {
   late String pDob;
   late String pAdd;
   late int pMobileNo;
-  late Doctor doctor;
 
 //<editor-fold desc="Data Methods">
 
@@ -20,20 +19,20 @@ class PatientDt {
     required this.pDob,
     required this.pAdd,
     required this.pMobileNo,
-    required this.doctor,
   });
 
-  @override
+// la@override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is PatientDt &&
-          runtimeType == other.runtimeType &&
-          pid == other.pid &&
-          pName == other.pName &&
-          pDob == other.pDob &&
-          pAdd == other.pAdd &&
-          pMobileNo == other.pMobileNo &&
-          doctor == other.doctor);
+          (other is PatientDt &&
+              runtimeType == other.runtimeType &&
+              pid == other.pid &&
+              pName == other.pName &&
+              pDob == other.pDob &&
+              pAdd == other.pAdd &&
+              pMobileNo == other.pMobileNo
+          );
+
 
   @override
   int get hashCode =>
@@ -41,8 +40,8 @@ class PatientDt {
       pName.hashCode ^
       pDob.hashCode ^
       pAdd.hashCode ^
-      pMobileNo.hashCode ^
-      doctor.hashCode;
+      pMobileNo.hashCode;
+
 
   @override
   String toString() {
@@ -52,9 +51,9 @@ class PatientDt {
         ' pDob: $pDob,' +
         ' pAdd: $pAdd,' +
         ' pMobileNo: $pMobileNo,' +
-        ' doctor: $doctor,' +
         '}';
   }
+
 
   PatientDt copyWith({
     int? pid,
@@ -62,7 +61,6 @@ class PatientDt {
     String? pDob,
     String? pAdd,
     int? pMobileNo,
-    Doctor? doctor,
   }) {
     return PatientDt(
       pid: pid ?? this.pid,
@@ -70,18 +68,17 @@ class PatientDt {
       pDob: pDob ?? this.pDob,
       pAdd: pAdd ?? this.pAdd,
       pMobileNo: pMobileNo ?? this.pMobileNo,
-      doctor: doctor ?? this.doctor,
     );
   }
 
+
   Map<String, dynamic> toMap() {
     return {
-      'pid': pid,
-      'pName': pName,
-      'pDob': pDob,
-      'pAdd': pAdd,
-      'pMobileNo': pMobileNo,
-      'doctor': doctor,
+      'pid': this.pid,
+      'pName': this.pName,
+      'pDob': this.pDob,
+      'pAdd': this.pAdd,
+      'pMobileNo': this.pMobileNo,
     };
   }
 
@@ -92,11 +89,13 @@ class PatientDt {
       pDob: map['pDob'] as String,
       pAdd: map['pAdd'] as String,
       pMobileNo: map['pMobileNo'] as int,
-      doctor: Doctor.fromMap(map['doctor'])
-      // department: Department.fromMap(map['department']),
-
     );
   }
+
+
+  //</editor-fold>
+
+
 
 //</editor-fold>
 }

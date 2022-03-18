@@ -32,77 +32,91 @@ class _PatientsPageState extends State<PatientsPage> {
         scrollDirection: Axis.vertical,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: DataTable(columns: const [
-            DataColumn(
-                label: Text('ID',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-            DataColumn(
-                label: Text('Name',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-            DataColumn(
-                label: Text('Date of birth',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-            DataColumn(
-                label: Text('Patient Address',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-            DataColumn(
-                label: Text('Patient mobile no',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-            DataColumn(
-                label: Text('Doctors Name',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-
-            DataColumn(
-                label: Text('Action',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ))),
-          ], rows: [
-            for (int i = 0; i < plist.length; i++)
-              DataRow(cells: [
-                DataCell(Text(plist[i].pid.toString())),
-                DataCell(Text(plist[i].pName)),
-                DataCell(Text(plist[i].pDob)),
-                DataCell(Text(plist[i].pAdd)),
-                DataCell(Text(plist[i].pMobileNo.toString())),
-                DataCell(Text(plist[i].doctor.doctorName)),
-
-                const DataCell(
-                  Icon(
-                    Icons.edit,
-                    color: Colors.green,
-                    size: 30.0,
+          child: Column(
+            children: [
+              Padding(
+                  padding: EdgeInsets.all(20),
+                child: Text(
+                  "Patients list",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
-                // DataCell(Text(plist[i].tid)),
-              ])
-          ]),
+              ),
+              DataTable(columns: const [
+                DataColumn(
+                    label: Text('ID',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+                DataColumn(
+                    label: Text('Name',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+                DataColumn(
+                    label: Text('Date of birth',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+                DataColumn(
+                    label: Text('Patient Address',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+                DataColumn(
+                    label: Text('Patient mobile no',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+                // DataColumn(
+                //     label: Text('Doctors Name',
+                //         textAlign: TextAlign.center,
+                //         style: TextStyle(
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //         ))),
+
+                DataColumn(
+                    label: Text('Action',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ))),
+              ], rows: [
+                for (int i = 0; i < plist.length; i++)
+                  DataRow(cells: [
+                    DataCell(Text(plist[i].pid.toString())),
+                    DataCell(Text(plist[i].pName)),
+                    DataCell(Text(plist[i].pDob)),
+                    DataCell(Text(plist[i].pAdd)),
+                    DataCell(Text(plist[i].pMobileNo.toString())),
+                   // DataCell(Text(plist[i].doctor.doctorName)),
+
+                    const DataCell(
+                      Icon(
+                        Icons.edit,
+                        color: Colors.green,
+                        size: 30.0,
+                      ),
+                    ),
+                    // DataCell(Text(plist[i].tid)),
+                  ])
+              ]),
+            ],
+          ),
         ));
   }
 }

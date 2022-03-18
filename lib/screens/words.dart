@@ -39,14 +39,22 @@ class _WordsPageState extends State<WordsPage> {
           label: Text('Name'),
         ),
         DataColumn(
+          label: Text('Patient name'),
+        ),DataColumn(
+          label: Text('Doctors Name'),
+        ),
+        DataColumn(
           label: Text('Action'),
         ),
       ], rows: [
         for (int i = 0; i < wlist.length; i++)
           DataRow(cells: [
+
             DataCell(Text(wlist[i].wid.toString())),
             DataCell(Text(wlist[i].wardName)),
-            DataCell(
+            DataCell(Text(wlist[i].patient.pName)),
+            DataCell(Text(wlist[i].doctor.doctorName)),
+            const DataCell(
               Icon(
                 Icons.edit,
                 color: Colors.green,

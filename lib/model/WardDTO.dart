@@ -56,10 +56,10 @@ class WardDTO{
 
   Map<String, dynamic> toMap() {
     return {
-      'wid': this.wid,
-      'wardName': this.wardName,
-      'patient': this.patient,
-      'doctor': this.doctor,
+      'wid': wid,
+      'wardName': wardName,
+      'patient': patient,
+      'doctor': doctor,
     };
   }
 
@@ -67,8 +67,9 @@ class WardDTO{
     return WardDTO(
       wid: map['wid'] as int,
       wardName: map['wardName'] as String,
-      patient: map['patient'] as PatientDt,
-      doctor: map['doctor'] as Doctor,
+      patient: PatientDt.fromMap(map['patient']),
+      doctor: Doctor.fromMap(map['doctor']),
+
     );
   }
 
