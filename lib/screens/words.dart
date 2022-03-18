@@ -31,42 +31,67 @@ class _WordsPageState extends State<WordsPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: DataTable(columns: const [
-        DataColumn(
-          label: Text('ID'),
-        ),
-        DataColumn(
-          label: Text('Name'),
-        ),
-        DataColumn(
-          label: Text('Patient name'),
-        ),DataColumn(
-          label: Text('Doctors Name'),
-        ),
-        DataColumn(
-          label: Text('Action'),
-        ),
-      ], rows: [
-        for (int i = 0; i < wlist.length; i++)
-          DataRow(cells: [
-
-            DataCell(Text(wlist[i].wid.toString())),
-            DataCell(Text(wlist[i].wardName)),
-            DataCell(Text(wlist[i].patient.pName)),
-            DataCell(Text(wlist[i].doctor.doctorName)),
-            const DataCell(
-              Icon(
-                Icons.edit,
-                color: Colors.green,
-                size: 30.0,
-              ),
+      child: Column(
+        children: [     Padding(
+          padding: EdgeInsets.all(20),
+          child: Text(
+            "Wards list",
+            style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold
             ),
-            // // DataCell(Text(plist[i].doc)),
-            // DataCell(Text(plist[i].pAdd)),
-            // DataCell(Text(plist[i].pDob)),
-            // DataCell(Text(plist[i].tid)),
-          ])
-      ]),
+          ),
+        ),
+          DataTable(columns: const [
+            DataColumn(
+                label: Text('ID',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ))),
+            DataColumn(
+                label: Text('Ward Name',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ))),
+            // DataColumn(
+            //   label: Text('Patient name'),
+            // ),DataColumn(
+            //   label: Text('Doctors Name'),
+            // ),
+            DataColumn(
+                label: Text('Action',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ))),
+          ], rows: [
+            for (int i = 0; i < wlist.length; i++)
+              DataRow(cells: [
+
+                DataCell(Text(wlist[i].wid.toString())),
+                DataCell(Text(wlist[i].wardName)),
+                // DataCell(Text(wlist[i].patient.pName)),
+                // DataCell(Text(wlist[i].doctor.doctorName)),
+                const DataCell(
+                  Icon(
+                    Icons.edit,
+                    color: Colors.green,
+                    size: 30.0,
+                  ),
+                ),
+                // // DataCell(Text(plist[i].doc)),
+                // DataCell(Text(plist[i].pAdd)),
+                // DataCell(Text(plist[i].pDob)),
+                // DataCell(Text(plist[i].tid)),
+              ])
+          ]),
+        ],
+      ),
     );
   }
 }

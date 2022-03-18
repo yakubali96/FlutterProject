@@ -32,14 +32,32 @@ class _TestPageState extends State<TestPage> {
     return Container(
       child: DataTable(columns: const [
         DataColumn(
-          label: Text('Test ID'),
-        ),
+            label: Text('Test Id',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))),
         DataColumn(
-          label: Text('Test Name'),
-        ),
+            label: Text('Test Name',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))),
         DataColumn(
-          label: Text('Test Date'),
-        ),
+            label: Text('Test Date',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))), DataColumn(
+            label: Text('Action',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ))),
         // DataColumn(
         //   label: Text('Doctor'),
         // ),
@@ -58,6 +76,13 @@ class _TestPageState extends State<TestPage> {
             DataCell(Text(tlist[i].tid.toString())),
             DataCell(Text(tlist[i].tName)),
             DataCell(Text(tlist[i].tDate)),
+            const DataCell(
+              Icon(
+                Icons.edit,
+                color: Colors.green,
+                size: 30.0,
+              ),
+            ),
           // DataCell(Text(plist[i].doc)),
           // DataCell(Text(plist[i].pAdd)),
           //   DataCell(Text(tlist[i].doctor.doctorName)),

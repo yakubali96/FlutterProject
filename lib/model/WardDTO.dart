@@ -4,62 +4,54 @@ import 'Doctor.dart';
 class WardDTO{
   late int wid;
   late String wardName;
-  late PatientDt patient;
-  late Doctor doctor;
 
 //<editor-fold desc="Data Methods">
 
   WardDTO({
     required this.wid,
     required this.wardName,
-    required this.patient,
-    required this.doctor,
   });
 
-  @override
+// la@override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is WardDTO &&
-          runtimeType == other.runtimeType &&
-          wid == other.wid &&
-          wardName == other.wardName &&
-          patient == other.patient &&
-          doctor == other.doctor);
+          (other is WardDTO &&
+              runtimeType == other.runtimeType &&
+              wid == other.wid &&
+              wardName == other.wardName
+          );
+
 
   @override
   int get hashCode =>
-      wid.hashCode ^ wardName.hashCode ^ patient.hashCode ^ doctor.hashCode;
+      wid.hashCode ^
+      wardName.hashCode;
+
 
   @override
   String toString() {
     return 'WardDTO{' +
         ' wid: $wid,' +
         ' wardName: $wardName,' +
-        ' patient: $patient,' +
-        ' doctor: $doctor,' +
         '}';
   }
+
 
   WardDTO copyWith({
     int? wid,
     String? wardName,
-    PatientDt? patient,
-    Doctor? doctor,
   }) {
     return WardDTO(
       wid: wid ?? this.wid,
       wardName: wardName ?? this.wardName,
-      patient: patient ?? this.patient,
-      doctor: doctor ?? this.doctor,
     );
   }
 
+
   Map<String, dynamic> toMap() {
     return {
-      'wid': wid,
-      'wardName': wardName,
-      'patient': patient,
-      'doctor': doctor,
+      'wid': this.wid,
+      'wardName': this.wardName,
     };
   }
 
@@ -67,11 +59,12 @@ class WardDTO{
     return WardDTO(
       wid: map['wid'] as int,
       wardName: map['wardName'] as String,
-      patient: PatientDt.fromMap(map['patient']),
-      doctor: Doctor.fromMap(map['doctor']),
-
     );
   }
 
-//</editor-fold>
+
+  //</editor-fold>
+
+  // late Doctor doctor;
+
 }
