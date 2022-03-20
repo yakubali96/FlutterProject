@@ -89,8 +89,8 @@ class Bill {
       bAmt: map['bAmt'] as int,
       isInsuared: map['isInsuared'] as bool,
       billDate: map['billDate'] as String,
-      insurance: map['insurance'] as Insurance,
-      patient: map['patient'] as PatientDt,
+      insurance: Insurance.fromMap(map['insurance']),
+      patient: PatientDt.fromMap(map['patient']),
     );
   }
 

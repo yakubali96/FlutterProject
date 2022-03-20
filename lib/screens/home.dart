@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
     } else if (currentPage == DrawerSections.insurance) {
       container = InsurancePage();
     } else if (currentPage == DrawerSections.bill) {
-      container = Bill();
+      container =BillPage();
     } else if (currentPage == DrawerSections.operation) {
       container = OperationPage();
     } else if (currentPage == DrawerSections.test) {
@@ -196,6 +196,9 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+class SpecializationPage {
 }
 
 enum DrawerSections {

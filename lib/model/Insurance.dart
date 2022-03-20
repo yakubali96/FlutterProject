@@ -67,7 +67,8 @@ class Insurance{
       iNo: map['iNo'] as int,
       iAmt: map['iAmt'] as double,
       iExpiryDate: map['iExpiryDate'] as String,
-      patient: map['patient'] as PatientDt,
+      patient: PatientDt.fromMap(map['patient'])
+
     );
   }
 

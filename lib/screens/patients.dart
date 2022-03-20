@@ -28,23 +28,25 @@ class _PatientsPageState extends State<PatientsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Column(
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Padding(
-                  padding: EdgeInsets.all(20),
-                child: Text(
-                  "Patients list",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              DataTable(columns: const [
+        Column(
+        children: [
+        Padding(
+        padding: EdgeInsets.all(20),
+        child: Text(
+          "Patients list",
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        ),
+      ),
+      DataTable(
+          headingRowColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.teal),
+          columns: const [
                 DataColumn(
                     label: Text('ID',
                         textAlign: TextAlign.center,
@@ -117,6 +119,6 @@ class _PatientsPageState extends State<PatientsPage> {
               ]),
             ],
           ),
-        ));
+    ])));
   }
 }

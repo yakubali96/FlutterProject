@@ -13,7 +13,7 @@ class Medicos{
   late int quantity;
   late int total;
   late String date;
-  late Doctor doctor;
+
   late PatientDt  patient;
 
 //<editor-fold desc="Data Methods">
@@ -25,7 +25,6 @@ class Medicos{
     required this.quantity,
     required this.total,
     required this.date,
-    required this.doctor,
     required this.patient,
   });
 
@@ -40,7 +39,6 @@ class Medicos{
           quantity == other.quantity &&
           total == other.total &&
           date == other.date &&
-          doctor == other.doctor &&
           patient == other.patient);
 
   @override
@@ -51,7 +49,6 @@ class Medicos{
       quantity.hashCode ^
       total.hashCode ^
       date.hashCode ^
-      doctor.hashCode ^
       patient.hashCode;
 
   @override
@@ -63,7 +60,6 @@ class Medicos{
         ' quantity: $quantity,' +
         ' total: $total,' +
         ' date: $date,' +
-        ' doctor: $doctor,' +
         ' patient: $patient,' +
         '}';
   }
@@ -75,7 +71,6 @@ class Medicos{
     int? quantity,
     int? total,
     String? date,
-    Doctor? doctor,
     PatientDt? patient,
   }) {
     return Medicos(
@@ -85,7 +80,6 @@ class Medicos{
       quantity: quantity ?? this.quantity,
       total: total ?? this.total,
       date: date ?? this.date,
-      doctor: doctor ?? this.doctor,
       patient: patient ?? this.patient,
     );
   }
@@ -98,7 +92,6 @@ class Medicos{
       'quantity': this.quantity,
       'total': this.total,
       'date': this.date,
-      'doctor': this.doctor,
       'patient': this.patient,
     };
   }
@@ -111,8 +104,7 @@ class Medicos{
       quantity: map['quantity'] as int,
       total: map['total'] as int,
       date: map['date'] as String,
-      doctor: map['doctor'] as Doctor,
-      patient: map['patient'] as PatientDt,
+      patient: PatientDt.fromMap(map['patient']),
     );
   }
 

@@ -43,12 +43,52 @@ Future<http.Response> getTest() async {
 
   return response;
 }
-  Future<http.Response> getSpeacialization() async {
-    final response = await http.get(Uri.parse(getAllSpeacializationApi),
+  Future<http.Response> getSpea() async {
+    final response = await http.get(Uri.parse(getAllSpeApi),
         headers: requestHeaders );
 
 
     return response;
+
+}
+Future<http.Response> getInsurance() async {
+  final response = await http.get(Uri.parse(getAllInsurance),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
+Future<http.Response> getMedicos() async {
+  final response = await http.get(Uri.parse(getAllMedicos),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
+Future<http.Response> getBill() async {
+  final response = await http.get(Uri.parse(getAllBill),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
+Future<http.Response> getOpt() async {
+  final response = await http.get(Uri.parse(getAllOpt),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
+Future<http.Response> getEmployee() async {
+  final response = await http.get(Uri.parse(getAllEmp),
+      headers: requestHeaders );
+
+
+  return response;
 
 }
 //

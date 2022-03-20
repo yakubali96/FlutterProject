@@ -31,18 +31,24 @@ class _WordsPageState extends State<WordsPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [     Padding(
-          padding: EdgeInsets.all(20),
-          child: Text(
-            "Wards list",
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-            ),
-          ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+        Column(
+        children: [
+        Padding(
+        padding: EdgeInsets.all(20),
+        child: Text(
+          "Ward list",
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         ),
-          DataTable(columns: const [
+      ),
+      DataTable(
+          headingRowColor: MaterialStateColor.resolveWith(
+                  (states) => Colors.teal),
+          columns: const [
             DataColumn(
                 label: Text('ID',
                     textAlign: TextAlign.center,
@@ -92,6 +98,6 @@ class _WordsPageState extends State<WordsPage> {
           ]),
         ],
       ),
-    );
+    ])));
   }
 }

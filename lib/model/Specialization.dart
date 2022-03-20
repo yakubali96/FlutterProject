@@ -1,3 +1,5 @@
+import 'dart:core';
+
 class Specialization {
   late int specId;
   late String speciality;
@@ -40,8 +42,8 @@ class Specialization {
 
   Map<String, dynamic> toMap() {
     return {
-      'specId': this.specId,
-      'speciality': this.speciality,
+      'specId': specId,
+      'speciality': speciality,
     };
   }
 
