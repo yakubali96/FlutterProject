@@ -105,7 +105,7 @@ class _PatientsPageState extends State<PatientsPage> {
                     DataCell(Text(plist[i].pDob)),
                     DataCell(Text(plist[i].pAdd)),
                     DataCell(Text(plist[i].pMobileNo.toString())),
-                   // DataCell(Text(plist[i].doctor.doctorName)),
+                   // DataCell(Text(plist[i].doc.doctorName)),
 
                     const DataCell(
                       Icon(

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:hospital_management/helper/patientget.dart';
 import 'package:hospital_management/model/Employee.dart';
+import 'package:hospital_management/screens/add-Chapter/AddEmployee.dart';
 
 class EmployeesPage extends StatefulWidget {
   @override
@@ -98,21 +99,37 @@ class _SettingsPageState extends State<EmployeesPage> {
                                     Text(emlist[i].empMobileNo.toString())),
                                 DataCell(Text(emlist[i].empAdd)),
                                 DataCell(Text(emlist[i].salary.toString())),
-                                const DataCell(
-                                  Icon(
-                                    Icons.edit,
-                                    color: Colors.green,
-                                    size: 30.0,
-                                  ),
-                                ),
+                                DataCell(Text(emlist[i].salary.toString())),
+
                                 // // DataCell(Text(plist[i].doc)),
                                 // DataCell(Text(plist[i].pAdd)),
                                 // DataCell(Text(plist[i].pDob)),
                                 // DataCell(Text(plist[i].tid)),
                               ])
                           ]),
+                      Container(
+                          height: 50,
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.green
+                            ),
+                            child: const Text(
+                              'Add Employee',
+
+                              style:
+                              TextStyle(fontSize: 20.0, fontWeight: FontWeight.w900),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const AddEmployee()
+                              ));
+                            },
+                          )),
                     ],
                   ),
                 ])));
   }
+
 }

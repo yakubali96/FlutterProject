@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hospital_management/screens/add-Chapter/AddEmployee.dart';
+import 'package:hospital_management/screens/add-Chapter/AddMedicos.dart';
 import 'package:hospital_management/screens/dashboard.dart';
 import 'package:hospital_management/screens/employees.dart';
 import 'package:hospital_management/screens/medicos.dart';
@@ -35,9 +37,9 @@ class _HomePageState extends State<HomePage> {
     } else if (currentPage == DrawerSections.words) {
       container = WordsPage();
     } else if (currentPage == DrawerSections.departments) {
-      container = DepartmentsPage();
+      container = AddEmployee();
     } else if (currentPage == DrawerSections.speacialization) {
-      container = SpecializationPage();
+      container = AddMedicos();
     } else if (currentPage == DrawerSections.insurance) {
       container = InsurancePage();
     } else if (currentPage == DrawerSections.bill) {
@@ -113,9 +115,9 @@ class _HomePageState extends State<HomePage> {
           menuItem(4, "WARD", Icons.notes,
               currentPage == DrawerSections.words ? true : false),
           Divider(),
-          menuItem(5, "DEPARTMENT", Icons.settings_outlined,
+          menuItem(5, "Add Employee", Icons.settings_outlined,
               currentPage == DrawerSections.departments ? true : false),
-          menuItem(6, "SPECIALIZATION", Icons.notifications_outlined,
+          menuItem(6, "Add Medicin", Icons.notifications_outlined,
               currentPage == DrawerSections.speacialization ? true : false),
           Divider(),
           menuItem(7, "INSURANCE", Icons.privacy_tip_outlined,

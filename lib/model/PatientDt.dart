@@ -21,18 +21,16 @@ class PatientDt {
     required this.pMobileNo,
   });
 
-// la@override
+  @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          (other is PatientDt &&
-              runtimeType == other.runtimeType &&
-              pid == other.pid &&
-              pName == other.pName &&
-              pDob == other.pDob &&
-              pAdd == other.pAdd &&
-              pMobileNo == other.pMobileNo
-          );
-
+      (other is PatientDt &&
+          runtimeType == other.runtimeType &&
+          pid == other.pid &&
+          pName == other.pName &&
+          pDob == other.pDob &&
+          pAdd == other.pAdd &&
+          pMobileNo == other.pMobileNo);
 
   @override
   int get hashCode =>
@@ -41,7 +39,6 @@ class PatientDt {
       pDob.hashCode ^
       pAdd.hashCode ^
       pMobileNo.hashCode;
-
 
   @override
   String toString() {
@@ -53,7 +50,6 @@ class PatientDt {
         ' pMobileNo: $pMobileNo,' +
         '}';
   }
-
 
   PatientDt copyWith({
     int? pid,
@@ -70,7 +66,6 @@ class PatientDt {
       pMobileNo: pMobileNo ?? this.pMobileNo,
     );
   }
-
 
   Map<String, dynamic> toMap() {
     return {
@@ -91,11 +86,6 @@ class PatientDt {
       pMobileNo: map['pMobileNo'] as int,
     );
   }
-
-
-  //</editor-fold>
-
-
 
 //</editor-fold>
 }

@@ -10,6 +10,9 @@ String getAllMedicos = host + "/hms/api/medicos";
 String getAllBill = host + "/hms/api/bill";
 String getAllOpt =host+"/hms/api/operation";
 String getAllEmp =host+"/hms/api/employee";
+String saveEmp=host+"/hms/api/employee";
+String saveMed=host+"/hms/api/medicos";
+
 
 
 String loginApi = host +  "/hms/auth/signin";

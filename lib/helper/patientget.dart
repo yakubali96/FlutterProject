@@ -91,6 +91,22 @@ Future<http.Response> getEmployee() async {
   return response;
 
 }
+Future<http.Response> saveEmployee() async {
+  final response = await http.post(Uri.parse(saveEmp),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
+Future<http.Response> saveMedicin() async {
+  final response = await http.post(Uri.parse(saveMed),
+      headers: requestHeaders );
+
+
+  return response;
+
+}
 //
 // Future<http.Response> signUp(EmployeeModel employee) async {
 //   final response = await http.post(Uri.parse(registerApi),
